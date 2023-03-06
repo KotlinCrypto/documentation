@@ -160,6 +160,23 @@ ykman openpgp keys set-touch sig on
 ```
 
 - **Release** publications from Sonatype OSS Nexus StagingRepositories manager
+    - Alternatively, can use Curl with the given repository id's that were output
+      to terminal when publishing, e.g. `orgkotlincrypto-1018`
+      ```shell
+      curl -v -u "<USER NAME>" \
+        -H "Content-Type: application/json" \
+        -H "Accept: application/json" \
+        https://s01.oss.sonatype.org/service/local/staging/bulk/promote --data '
+        {
+          "data": {
+            "stagedRepositoryIds": [
+              "<repository id>",
+              "<repository id>"
+            ],
+            "autoDropAfterRelease": true
+          }
+        }'
+      ```
 
 - Merge release branch to `master`
 ```bash
