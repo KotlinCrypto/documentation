@@ -146,12 +146,14 @@ PUBLISH_TASKS=$(./gradlew tasks -PKMP_TARGETS="$MACOS_TARGETS" |
 ykman openpgp keys set-touch sig on
 ```
 
-- Close publications (Don't release yet)
-    - Login to Sonatype OSS Nexus: [oss.sonatype.org](https://s01.oss.sonatype.org/#stagingRepositories)
-    - Click on **Staging Repositories**
-    - Select all Publications
-    - Click **Close** then **Confirm**
-    - Wait a bit, hit **Refresh** until the *Status* changes to *Closed*
+- The [gradle-maven-publish-plugin](https://github.com/vanniktech/gradle-maven-publish-plugin) should have automatically 
+  closed the staged repositories, but if it did not:
+    - Close publications (Don't release yet)
+        - Login to Sonatype OSS Nexus: [oss.sonatype.org](https://s01.oss.sonatype.org/#stagingRepositories)
+        - Click on **Staging Repositories**
+        - Select all Publications
+        - Click **Close** then **Confirm**
+        - Wait a bit, hit **Refresh** until the *Status* changes to *Closed*
 
 - Check Publication
 ```bash
