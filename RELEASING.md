@@ -157,7 +157,7 @@ ykman openpgp keys set-touch sig on
 
 - Check Publication
 ```bash
-./gradlew clean -DKMP_TARGETS_ALL
+./gradlew clean -PCHECK_PUBLICATION -DKMP_TARGETS_ALL
 ./gradlew :tools:check-publication:build --refresh-dependencies -PCHECK_PUBLICATION -DKMP_TARGETS_ALL
 ```
 
