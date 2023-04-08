@@ -172,8 +172,8 @@ ykman openpgp keys set-touch sig on
         {
           "data": {
             "stagedRepositoryIds": [
-              "<repository id>",
-              "<repository id>"
+              "orgkotlincrypto-<id>",
+              "orgkotlincrypto-<id>"
             ],
             "autoDropAfterRelease": true
           }
