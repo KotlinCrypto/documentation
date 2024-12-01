@@ -60,7 +60,7 @@ ykman openpgp keys set-touch sig off
 - Perform a clean build
 ```bash
 ./gradlew clean -DKMP_TARGETS_ALL
-./gradlew build -DKMP_TARGETS_ALL
+./gradlew build --no-build-cache -DKMP_TARGETS_ALL
 ```
 
 - Publish
@@ -124,7 +124,7 @@ signing.gnupg.keyName=0x61471B8AB3890961
 ```bash
 MACOS_TARGETS="JVM,JS,IOS_ARM64,IOS_X64,IOS_SIMULATOR_ARM64,MACOS_ARM64,MACOS_X64,TVOS_ARM64,TVOS_X64,TVOS_SIMULATOR_ARM64,WATCHOS_ARM32,WATCHOS_ARM64,WATCHOS_DEVICE_ARM64,WATCHOS_X64,WATCHOS_SIMULATOR_ARM64,WASM_JS,WASM_WASI"
 ./gradlew clean -PKMP_TARGETS="$MACOS_TARGETS"
-./gradlew build -PKMP_TARGETS="$MACOS_TARGETS"
+./gradlew build --no-build-cache -PKMP_TARGETS="$MACOS_TARGETS"
 ```
 
 - Publish macOS build
@@ -218,6 +218,7 @@ git push origin "$VERSION_NAME"
 - Delete local release branch
 ```bash
 git branch -D release_"$VERSION_NAME"
+git fetch origin --prune
 ```
 
 ### Macos
@@ -231,6 +232,7 @@ git pull
 - Delete local release branch
 ```bash
 git branch -D release_"$VERSION_NAME"
+git fetch origin --prune
 ```
 
 - Shutdown VMs (if not needed anymore)
