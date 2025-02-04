@@ -195,6 +195,11 @@ git pull
 git merge --no-ff -S release_"$VERSION_NAME"
 ```
 
+- Publish `dokka` documentation
+```bash
+./gh-pages/publish.sh
+```
+
 - Update `VERSION_NAME` (add `-SNAPSHOT`) and `VERSION_CODE` in root project's `gradle.properties` file
 
 - Commit changes
